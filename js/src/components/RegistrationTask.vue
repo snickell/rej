@@ -117,7 +117,6 @@ window.Vuetify = Vuetify
 const components = {
   ImagePane,
   PointList,
-  S3TiffPicker,
   ...Vuetify,
 }
 
