@@ -1,4 +1,4 @@
-# Rej is an interactive image registration tool for JupyterLab
+# Interactive Image Registration for JupyterLab
 
 ![Rej in action for georeferencing](https://user-images.githubusercontent.com/223277/78885250-f6a34680-79f7-11ea-881c-0750549ff3c5.png)
 
