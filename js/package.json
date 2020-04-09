@@ -5,15 +5,15 @@
   "license": "MIT",
   "scripts": {
     "build": "vue-cli-service build --target lib --inline-vue --modern ./src/jupyterlab-extension.js",
-    
     "watch": "vue-cli-service build --watch --target lib --inline-vue --modern ./src/jupyterlab-extension.js",
     "jupyterlab": "jupyter labextension link . --no-build && jupyter lab --watch",
-    "lint": "vue-cli-service lint",    
+    "lint": "vue-cli-service lint",
     "build:app": "vue-cli-service build ./src/app.js",
     "serve": "vue-cli-service serve ./src/app.js"
   },
   "main": "dist/ceresimaging-rej.umd.js",
   "dependencies": {
+    "@jupyter-widgets/base": "^3.0.0",
     "@jupyterlab/application": "^2.0.0",
     "@jupyterlab/mainmenu": "^2.0.0",
     "@lumino/algorithm": "^1.2.3",

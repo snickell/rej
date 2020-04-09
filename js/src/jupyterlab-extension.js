@@ -1,19 +1,35 @@
 import { Menu } from '@lumino/widgets'
 import { ICommandPalette } from '@jupyterlab/apputils'
 import { IMainMenu } from '@jupyterlab/mainmenu'
+import { IJupyterWidgetRegistry } from '@jupyter-widgets/base'
 
-import { GeoreferenceWidget } from './georeference-widget'
+import { RejWidget, RejDOMWidget } from './rej-widget'
 
 window._debug = window._debug || {}
 
 const extension = {
-  id: 'georeference-widget',
+  id: 'rej:main',
   autoStart: true,
-  requires: [ICommandPalette, IMainMenu],
-  activate: (app, palette, mainMenu) => {
+  requires: [
+    IJupyterWidgetRegistry,
+    ICommandPalette,
+    IMainMenu,
+  ],
+  activate: (
+    app, 
+    widgets,
+    palette,
+    mainMenu,
+  ) => {
     _debug.jupyter = app
 
-    console.log("georeference-widget activating")
+    widgets.registerWidget({
+      name: 'ceresimaging-rej',
+      version: '0.1.0',
+      exports: { RejDOMWidget }
+    })
+
+    console.log("rej activating")
 
     const { commands, shell } = app
     
@@ -24,17 +40,17 @@ const extension = {
       label: 'Open Georeference Widget',
       caption: 'Open Georeference Widget',
       execute: (args) => {
-        const widget = new GeoreferenceWidget()
+        const widget = new RejWidget()
         shell.add(widget, 'main')
       }
     })
     georefMenu.addItem({ command, args: { origin: 'from the menu' } })
     mainMenu.addMenu(georefMenu, { rank: 80 })
 
-    console.log("georeference-widget activated")
+    console.log("rej activated")
   }
 }
 
-console.log("georeference-widget loaded")
+console.log("rej loaded")
 
 export default extension;
