@@ -1,5 +1,5 @@
 import pathlib
-from setuptools import setup
+from setuptools import setup, find_packages
 
 DOT = pathlib.Path(__file__).parent
 README = (DOT / "README.md").read_text()
@@ -19,7 +19,7 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7",
     ],
-    packages=["rej"],
+    packages=find_packages(),
     include_package_data=True,
     install_requires=[
       "ipywidgets",
