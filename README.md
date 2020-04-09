@@ -34,11 +34,9 @@ Most of Rej is written in Javascript/VueJS, which is then accessed through a thi
 Development will mostly take place inside the context of JupyterLab, so its nice to set things
 up so every time you save a file, the JupyterLab extension is updated:
 
-1. `pip install -r requirements.txt && pip install -e .`
-2. `cd ./js`
-3. `npm install`
-4. In one terminal: `npm run watch`
-5. In another terminal: `npm run jupyterlab`
+1. `pip install -r requirements.txt && pip install -e . && jupyter nbextension enable --py widgetsnbextension && jupyter labextension install --no-build @jupyter-widgets/jupyterlab-manager && cd ./js && npm install`
+2. In one terminal: `npm run watch`
+3. In another terminal: `npm run jupyterlab`
 
 ### Run outside JupyterLab for faster dev iteration
 

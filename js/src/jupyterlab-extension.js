@@ -11,23 +11,29 @@ const extension = {
   id: 'rej:main',
   autoStart: true,
   requires: [
-    IJupyterWidgetRegistry,
     ICommandPalette,
     IMainMenu,
+    // TODO: If I enable this line, I get:
+    // index.js:277 Error: No provider for: jupyter.extensions.jupyterWidgetRegistry
+    // IJupyterWidgetRegistry,
   ],
   activate: (
     app, 
-    widgets,
     palette,
     mainMenu,
+    widgets,
   ) => {
     _debug.jupyter = app
 
-    widgets.registerWidget({
-      name: 'ceresimaging-rej',
-      version: '0.1.0',
-      exports: { RejDOMWidget }
-    })
+    if (widgets != undefined) {
+      widgets.registerWidget({
+        name: 'ceresimaging-rej',
+        version: '0.1.0',
+        exports: { RejDOMWidget }
+      })  
+    } else {
+      console.error("TODO: :-( we don't have the widget registry enabled")
+    }
 
     console.log("rej activating")
 
