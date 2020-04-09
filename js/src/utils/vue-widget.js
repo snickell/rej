@@ -17,8 +17,8 @@ export class VueWidget extends Widget {
 }
 
 export class VueDOMWidget extends DOMWidgetView {
-  constructor(vue, id) {
-    super()
+  constructor(vue, ...rest) {
+    super(...rest)
     this.vue = vue
   }  
   render() {
