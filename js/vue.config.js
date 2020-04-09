@@ -1,11 +1,5 @@
 const ThreadsPlugin = require('threads-plugin');
 
-/* packages to be loaded as externals using commonjs */
-const COMMON_JS_EXTERNALS = [
-  /^@jupyterlab\/.+$/,
-  /^@lumino\/.+$/,
-]
-
 module.exports = {
 
   // Its possible we want this to support <template> tags in .vue files:
@@ -38,16 +32,9 @@ module.exports = {
       new ThreadsPlugin()
     ],
     externals: [
+      /^@jupyter-widgets\/.+$/,
       /^@jupyterlab\/.+$/,
       /^@lumino\/.+$/,
-      /*function externalize_commonjs_externals(context, request, callback) {
-        if (COMMON_JS_EXTERNALS.find((packageMatch) => packageMatch.test(request))) {
-          console.log("\nEmitting ", request, "\n")
-          callback(null, '' + request)
-        } else {
-          callback()
-        }
-      }*/
     ]   
   },
   pluginOptions: {
