@@ -108,7 +108,7 @@ import PointList from './PointList'
 
 import loadGeotiff from '../utils/geotiff'
 
-import {zip_longest} from 'zip-array'
+import { zip_longest } from 'zip-array'
 import { spawn, Worker } from 'threads'
 import { save } from 'save-file'
 
