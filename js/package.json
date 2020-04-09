@@ -4,17 +4,13 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "serve": "vue-cli-service serve ./src/app.js",
     "build": "vue-cli-service build --target lib --inline-vue --modern ./src/jupyterlab-extension.js",
-    "lint": "vue-cli-service lint",
+    
+    "watch": "vue-cli-service build --watch --target lib --inline-vue --modern ./src/jupyterlab-extension.js",
     "jupyterlab": "jupyter labextension link . --no-build && jupyter lab --watch",
+    "lint": "vue-cli-service lint",    
     "build:app": "vue-cli-service build ./src/app.js",
-    "extension:disable": "jupyter labextension disable ceresimaging-rej",
-    "extension:enable": "jupyter labextension enable ceresimaging-rej",
-    "extension:install": "jupyter labextension install ceresimaging-rej",
-    "extension:uninstall": "jupyter labextension uninstall ceresimaging-rej",
-    "update": "npm run build ; npm run upload",
-    "watch": "vue-cli-service build --watch --target lib --inline-vue --modern ./src/jupyterlab-extension.js"
+    "serve": "vue-cli-service serve ./src/app.js"
   },
   "main": "dist/ceresimaging-rej.umd.js",
   "dependencies": {
