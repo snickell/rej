@@ -1,6 +1,14 @@
 # Interactive Image Registration for JupyterLab
 
+Rej can be used to achieve [registration](https://en.wikipedia.org/wiki/Image_registration)
+between two images, probably GeoTIFFs, but any format [rasterio](https://rasterio.readthedocs.io/)
+can read should work fine.
+
 ![Rej in action for georeferencing](https://user-images.githubusercontent.com/223277/78885250-f6a34680-79f7-11ea-881c-0750549ff3c5.png)
+
+Registration is achieved by selecting reference ("ground control") points on both
+images. A `.PTS` file is output containing pixel coordinates of corresponding points.
+Eventually, a new GeoTIFF can be output, we're working on it 🤙🏽.
 
 ## Installing Rej
 
