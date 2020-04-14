@@ -74,7 +74,8 @@
       "@vue/typescript"
     ],
     "rules": {
-      "no-console": "off"
+      "no-console": "off",
+      "no-debugger": "off"
     },
     "parserOptions": {
       "parser": "@typescript-eslint/parser"
@@ -86,8 +87,8 @@
     }
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions"
+    "last 2 Chrome versions",
+    "last 2 Firefox versions"
   ],
   "jupyterlab": {
     "extension": true
