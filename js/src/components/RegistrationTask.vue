@@ -167,8 +167,8 @@ export default {
           })
           .catch(message => {
             this.numImagesLoading--
-            throw message
             alert(`Error loading GeoTIFF:\n${url}\n${message}`)
+            throw message
           })
       } else {
         const image = new window.Image()
