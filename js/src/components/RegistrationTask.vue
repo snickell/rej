@@ -303,6 +303,8 @@ ${pointLines}`
   },
   created () {
     const { imageryURL, referenceURL } = this
+    console.log("imageryURL: ", imageryURL)
+    console.log("referenceURL: ", referenceURL)
     this.loadImage(imageryURL, 'imageryImage')
     this.loadImage(referenceURL, 'referenceImage')
   },
