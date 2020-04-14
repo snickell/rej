@@ -12,7 +12,11 @@ export class RejWidget extends VueWidget {
 
 export class RejDOMWidget extends VueDOMWidget {
   constructor(...rest) {
-    super(createApp(), ...rest)
+    super(...rest)
+  }
+  createVue() {
+    debugger;
+    return createApp()
   }
 }
 
