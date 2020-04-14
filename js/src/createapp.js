@@ -5,7 +5,6 @@ import App from './components/RegistrationTask.vue'
 
 
 export default function createApp(props={}) {
-  console.log("Creating with props: ", props)
   return new Vue({
     store,
     render: h => h(App, { props })
