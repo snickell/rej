@@ -25,4 +25,4 @@ class Rej(DOMWidget):
 
 def register(img, reference_img):
     print("CHEEESE COMING")
-  return Rej(img, reference_img)
+    return Rej(img, reference_img)
