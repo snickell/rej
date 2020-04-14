@@ -1,4 +1,6 @@
 from ipywidgets import DOMWidget
+# from ipywidgets.trait_types import CByteMemoryView
+
 from traitlets import Unicode, Int
 
 EXTENSION_VERSION="0.1.0"
@@ -11,6 +13,9 @@ class Rej(DOMWidget):
 
     _view_module_version = Unicode(EXTENSION_VERSION).tag(sync=True)
     _model_module_version = Unicode(EXTENSION_VERSION).tag(sync=True)
+
+    # imagery = CByteMemoryView(help="The media data as a memory view of bytes.").tag(sync=True)
+    # reference = CByteMemoryView(help="The media data as a memory view of bytes.").tag(sync=True)
 
     def __init__(self, img, reference_img, *args, **kwargs):
         print("YOOOOO, I AM MEEEEEEEEEEE")
